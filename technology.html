@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="The patented method behind AI Augmented Reading — from a reader's text selection to an inline contextual visual."/>
+  <title>Technology · Augmented Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --paper:#F5F0E8;--paper-deep:#EDE8DC;--navy:#1A2744;
+      --ink:#1C1811;--ink-soft:#3A3428;--ink-muted:#7A7060;--ink-faint:#B0A898;
+      --gold:#C8920A;--gold-light:#E8B84C;--rule:rgba(28,24,17,0.12)
+    }
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:1.125rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:52px;border-bottom:1px solid rgba(255,255,255,0.06)}
+    nav a.brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;text-decoration:none}
+    .nav-links{display:flex;gap:1.75rem;list-style:none}
+    .nav-links a{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+    .nav-demo{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;background:var(--gold);color:#fff;padding:.38rem .9rem;text-decoration:none;transition:background .15s}
+    .nav-demo:hover{background:var(--gold-light)}
+
+    /* PAGE HERO */
+    .page-hero{position:relative;z-index:1;padding:4.5rem 2rem 3.5rem;border-bottom:1px solid var(--rule)}
+    .page-hero-inner{max-width:780px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end}
+    .page-eyebrow{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4rem);font-weight:700;line-height:1.04;letter-spacing:-.03em;color:var(--ink);margin-bottom:1rem}
+    .page-lead{font-size:1.15rem;color:var(--ink-soft);line-height:1.7;max-width:500px}
+
+    /* HERO MARK BLOCK — five dots representing the five steps */
+    .hero-mark{width:120px;height:120px;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;gap:.5rem}
+    .hero-mark-row{display:flex;gap:.55rem}
+    .hero-mark-dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--gold-light)}
+    .hero-mark-label{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,184,76,.7);margin-top:.4rem}
+
+    /* MAIN CONTENT */
+    .wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 2rem}
+    .section{padding:3rem 0;border-bottom:1px solid var(--rule)}
+    .section:last-of-type{border-bottom:none}
+    .section-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1.25rem}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--ink);margin-bottom:1rem}
+    p{color:var(--ink-soft);line-height:1.8;margin-bottom:1.1rem}
+    p:last-child{margin-bottom:0}
+    strong{color:var(--ink);font-weight:500}
+
+    /* PULL QUOTE */
+    .pull-quote{border-left:3px solid var(--gold);padding:1.25rem 1.5rem;background:var(--paper-deep);margin:2rem 0;font-size:1.18rem;font-style:italic;color:var(--ink-soft);line-height:1.65}
+
+    /* STEPS */
+    .steps{margin-top:1.75rem;display:flex;flex-direction:column;gap:0}
+    .step{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.6rem 0;border-bottom:1px solid var(--rule);align-items:start}
+    .step:first-child{border-top:1px solid var(--rule)}
+    .step-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold);font-style:italic;line-height:1;letter-spacing:-.02em}
+    .step-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;letter-spacing:-.01em;line-height:1.3}
+    .step-desc{font-size:1rem;color:var(--ink-soft);line-height:1.7}
+
+    /* APPROACH GRID */
+    .approach-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:1.75rem}
+    .approach-item{background:var(--paper);padding:1.5rem}
+    .approach-tag{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+    .approach-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;line-height:1.3}
+    .approach-desc{font-size:.95rem;color:var(--ink-muted);line-height:1.6}
+
+    /* PRINCIPLES — credentials list pattern */
+    .principles{margin-top:1.75rem;display:flex;flex-direction:column;gap:0}
+    .principle{display:grid;grid-template-columns:200px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--rule);align-items:start}
+    .principle:first-child{border-top:1px solid var(--rule)}
+    .principle-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);line-height:1.5}
+    .principle-value{font-size:1rem;color:var(--ink-soft);line-height:1.65}
+    .principle-value strong{color:var(--ink)}
+
+    /* CONTACT BAND */
+    .contact-band{position:relative;z-index:1;background:var(--navy);padding:2.5rem 2rem;margin:0}
+    .contact-band-inner{max-width:780px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+    .contact-band-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.6rem}
+    .contact-band-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.3rem}
+    .contact-band-email{font-size:1rem;color:rgba(255,255,255,.5)}
+    .contact-band-email a{color:var(--gold-light);text-decoration:none}
+    .contact-band-email a:hover{text-decoration:underline}
+    .btn-contact{display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;background:var(--gold);color:#fff;text-decoration:none;padding:.8rem 1.5rem;white-space:nowrap;transition:background .15s}
+    .btn-contact:hover{background:var(--gold-light)}
+    .btn-contact svg{width:11px;height:11px}
+
+    /* FOOTER */
+    footer{position:relative;z-index:1;background:var(--navy);padding:2rem;border-top:1px solid rgba(255,255,255,.06)}
+    .footer-inner{max-width:780px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-brand{font-family:'Playfair Display',serif;font-size:.95rem;color:#fff;font-weight:700}
+    .footer-links{display:flex;gap:1.5rem;list-style:none}
+    .footer-links a{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s}
+    .footer-links a:hover{color:var(--gold-light)}
+    .footer-copy{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.12em;color:rgba(255,255,255,.25);width:100%;margin-top:.5rem}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .page-hero{animation:fadeUp .65s ease both}
+
+    @media(max-width:640px){
+      .nav-links{display:none}
+      .page-hero-inner{grid-template-columns:1fr}
+      .hero-mark{display:none}
+      .step{grid-template-columns:1fr;gap:.5rem}
+      .approach-grid{grid-template-columns:1fr}
+      .principle{grid-template-columns:1fr;gap:.4rem}
+      .contact-band-inner{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">AI Augmented Reading</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/technology.html" class="active">Technology</a></li>
+    <li><a href="/usecases.html">Use Cases</a></li>
+    <li><a href="/licensing.html">IP &amp; Licensing</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/demo.html" class="nav-demo">View Demo →</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="page-eyebrow">The method</div>
+      <h1>From a reader's selection to an inline visual.</h1>
+      <p class="page-lead">A reader highlights a passage. The system recognises what kind of content it is, generates an appropriate visual, and renders it inline — without the reader leaving the document.</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <div class="hero-mark-row">
+        <span class="hero-mark-dot"></span>
+        <span class="hero-mark-dot"></span>
+        <span class="hero-mark-dot"></span>
+        <span class="hero-mark-dot"></span>
+        <span class="hero-mark-dot"></span>
+      </div>
+      <div class="hero-mark-label">Five steps</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="wrap">
+
+  <!-- THE FIVE STEPS -->
+  <section class="section">
+    <div class="section-label">The patented method</div>
+    <h2>Five steps, one continuous experience.</h2>
+    <p>Every interaction follows the same path — from the moment a reader selects text to the moment a contextual visual appears beneath it. The reader experiences a single coherent feature; the system handles the variation behind it.</p>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Text selection</div>
+          <div class="step-desc">The reader highlights any descriptive passage of five words or more within the reading interface. This uses the standard text selection event already present in every web and native reading application — no new interaction model is required. The selected passage is captured and passed to the next step.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Recognition</div>
+          <div class="step-desc">A trained language model analyses the selected passage and identifies which of the ten visual categories it belongs to — meteorological, anatomical, architectural, chemical, geographical, and so on. A cardiac cycle passage is recognised as anatomical. A storm system passage is recognised as meteorological.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Routing</div>
+          <div class="step-desc">The recognised category determines what kind of output is appropriate for that passage. The system selects between visual outputs and contextual text outputs depending on what the content can support. The reader never sees this decision — they see only the result.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Generation</div>
+          <div class="step-desc">The selected output type is generated from the content of the passage. A diagram, an animation, an illustration, or a contextual observation — whichever the recognition step has determined is most appropriate. The output is constructed specifically from what the passage describes.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div>
+          <div class="step-title">Inline display</div>
+          <div class="step-desc">The output is rendered inline below the highlighted passage, within the reading interface, with the reader's position preserved. The surrounding text remains in place. When the reader dismisses the output, the document reflows and they return to exactly where they were reading. No navigation occurred. No tab was opened. The reader never left the document.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- A RANGE OF OUTPUTS -->
+  <section class="section">
+    <div class="section-label">A range of outputs</div>
+    <h2>Always the right kind of response.</h2>
+    <p>The method supports a range of generation approaches, selected automatically based on the nature of the passage. The reader experiences a single coherent feature; different content produces different kinds of output.</p>
+
+    <div class="approach-grid">
+      <div class="approach-item">
+        <div class="approach-tag">Diagrammatic</div>
+        <div class="approach-title">Animated diagrams</div>
+        <div class="approach-desc">Process-based content — cardiac cycles, molecular pathways, chemical reactions — is rendered as structured diagrams whose elements derive from the passage itself.</div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-tag">Illustrative</div>
+        <div class="approach-title">Generated visuals</div>
+        <div class="approach-desc">Scene-based content — landscapes, historical settings, architectural views — produces illustrative visuals constructed from the passage's descriptive language.</div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-tag">Textual</div>
+        <div class="approach-title">Contextual insight</div>
+        <div class="approach-desc">For passages that don't lend themselves to visualisation, the system produces a brief, useful observation that adds comprehension value. Never an error state.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE PRINCIPLES -->
+  <section class="section">
+    <div class="section-label">Architecture principles</div>
+    <h2>How the method is designed to work.</h2>
+
+    <div class="pull-quote">The patent protects the method — not any specific AI model used to implement it.</div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-label">Model-agnostic</div>
+        <div class="principle-value">The method does not depend on any particular AI provider or model. A licensee may use whichever model best suits each step, and may change models over time as the technology evolves.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Platform-agnostic</div>
+        <div class="principle-value">The method works across EPUB, PDF and web-based reading interfaces. It is implementable at device level, application level or platform level.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-label">No content modification</div>
+        <div class="principle-value">The augmentation layer sits within the reading application. The underlying content file is untouched. A publisher's existing catalogue is immediately compatible — no editorial production cycle, no re-authoring, no new content investment.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Graceful by construction</div>
+        <div class="principle-value">The method is designed so that the reader always receives a useful response. Different passages produce different kinds of output, but the experience never breaks down into an error state.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Reader-initiated</div>
+        <div class="principle-value">Nothing appears without the reader's active choice. The feature is completely invisible until wanted — unlike enhanced ebooks, which were always-on and disruptive.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Position preserved</div>
+        <div class="principle-value">The visual is rendered without taking the reader away from where they were. When dismissed, the document reflows and the reader returns to the exact word they were reading.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- CONTACT BAND -->
+<div class="contact-band">
+  <div class="contact-band-inner">
+    <div>
+      <div class="contact-band-label">Discuss the method</div>
+      <div class="contact-band-name">Colm O'Connor</div>
+      <div class="contact-band-email">
+        <a href="mailto:colm@aiaugmentedreading.com">colm@aiaugmentedreading.com</a>
+        &nbsp;·&nbsp; Waterford, Ireland
+      </div>
+    </div>
+    <a href="/contact.html" class="btn-contact">
+      Contact page
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h10M7 2l4 4-4 4"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">AI Augmented Reading</div>
+    <ul class="footer-links">
+      <li><a href="/technology.html">Technology</a></li>
+      <li><a href="/usecases.html">Use Cases</a></li>
+      <li><a href="/licensing.html">Licensing</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/demo.html">Demo</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Colm O'Connor · All rights reserved · Patent pending PTIE20260000000265 · colm@aiaugmentedreading.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
