@@ -57,6 +57,19 @@ nav a.brand{font-size:.95rem;font-weight:700;letter-spacing:-.022em;color:var(--
 .hero{max-width:var(--wide);margin:0 auto;padding:5.5rem var(--pad) 4rem;
   border-bottom:1px solid var(--rule)}
 
+/* --- Hero with figure ------------------------------------------------------ */
+.hero-split{display:grid;grid-template-columns:1fr 460px;gap:3.5rem;align-items:center}
+.hero-figure{width:100%;height:auto;display:block}
+.hero-figure-cap{font-size:.78rem;line-height:1.5;color:var(--ink-3);margin-top:.7rem;max-width:none}
+@media(max-width:980px){
+  .hero-split{grid-template-columns:1fr;gap:2.25rem}
+  .hero-figure{max-width:520px}
+}
+
+/* --- Alternating section tone --------------------------------------------- */
+.section--tint{background:var(--paper-2);max-width:none;border-block:1px solid var(--rule)}
+.section--tint > *{max-width:var(--wide);margin-left:auto;margin-right:auto}
+
 /* --- Type ---------------------------------------------------------------- */
 h1{font-size:clamp(2.4rem,5.4vw,3.9rem);font-weight:600;line-height:1.1;
   letter-spacing:-.027em;max-width:17ch;margin-bottom:1.4rem}
