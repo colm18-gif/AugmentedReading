@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Position paper: why readers leave the page to understand it, and what a comprehension tool should do instead."/>
+  <title>Papers · AI Augmented Reading</title>
+  <link rel="canonical" href="https://aiaugmentedreading.com/papers.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=DM+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <!-- Analytics: privacy-first, cookieless, EU-hosted. No consent banner required.
+       Uncomment and set the domain when the site goes live.
+  <script defer data-domain="aiaugmentedreading.com" src="https://plausible.io/js/script.js"></script>
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav>
+    <a class="brand" href="index.html">AI Augmented Reading</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="built.html">What's Built</a></li>
+      <li><a href="evidence.html">Evidence</a></li>
+      <li><a href="papers.html" aria-current="page">Papers</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-demo" href="demo.html">View Demo →</a>
+  </nav>
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">Position paper · June 2026</p>
+      <h1>Why readers leave the page &mdash; and what a comprehension tool should do instead.</h1>
+      <p class="lead">Colm O'Connor · AI Augmented Reading</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="contact.html">Request PDF</a>
+        <a class="btn btn--secondary" href="evidence.html">The evidence position</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">&mdash;</span>
+          <p class="section-label">Abstract</p>
+        </div>
+        <div>
+          <div class="abstract">
+            <p class="abstract-label">Abstract</p>
+            <p>Readers of dense, technical text often leave the page in order to understand it,
+            searching for a diagram or an illustrated explanation before returning to where they left
+            off. This article argues that this common behaviour points to a distinct class of
+            reading-support tool &mdash; a &ldquo;comprehension tool&rdquo; &mdash; that is worth
+            distinguishing from the productivity tools, such as summarisers and writing assistants,
+            that dominate most discussion of artificial intelligence and reading. Four defining
+            properties are proposed, the idea is set against work that already exists, and a
+            distinction is drawn that I take to be central: between delivering more words to a reader
+            who has not understood the prose and delivering a generated visual instead. The
+            interaction itself is not new, and several systems already share it; what those systems
+            deliver, though, is words &mdash; highlights, annotations, written answers &mdash; and not
+            a generated picture. I am not aware of any system that generates an image inline, in
+            response to a reader's selection, as an aid to comprehension; the open question is whether
+            doing so &mdash; supplying the picture rather than more text &mdash; measurably improves
+            understanding.</p>
+          </div>
+          <p class="keywords">reading comprehension · comprehension tools · information literacy ·
+          generative AI · augmented reading</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="split">
+        <div>
+          <span class="section-num">01</span>
+          <p class="section-label">The paper</p>
+        </div>
+        <div class="paper">
+          <h3>Introduction</h3>
+          <p>A reader working through an unfamiliar technical passage will often do something the text
+          never asked of them: they stop, open a second window, and look for a visual. A student
+          reading a description of a chemical reaction searches for the mechanism as a diagram.
+          Someone working through a statistics chapter looks for a worked, visual example of the
+          distribution being described. A reader faced with a particularly dense paragraph seeks out
+          an illustrated explanation, or a short video, and then comes back to the text. The page is
+          not abandoned; it is supplemented, on the reader's own initiative, with a picture the reader
+          believes will make the next sentence make sense.</p>
+          <p>In the course of supporting learners working with dense academic material I have seen
+          this happen often, and I think it is worth taking seriously rather than treating as a quirk
+          of how people study. That readers reach for a picture is not, in itself, surprising. There
+          is a long line of research in educational psychology showing that well-chosen visuals
+          alongside text improve comprehension and retention compared with text on its own (Mayer and
+          Gallini, 1990; Mayer, 2009; Carney and Levin, 2002), an effect confirmed across many studies
+          by meta-analysis (Guo et al., 2020). What the behaviour tells us is more specific. For a
+          significant class of text, the reading interface as delivered is not sufficient for
+          understanding, and readers know it well enough to work around it &mdash; at a cost. Leaving
+          the page breaks the reader's place, adds a search task, and usually returns something
+          generic rather than something fitted to the exact sentence that caused the difficulty.</p>
+          <p>This article takes that everyday workaround as its starting point. I want to suggest that
+          it points to a kind of reading-support tool that has not been clearly named, even though
+          pieces of it have already been built, and that naming it helps us see both what such a tool
+          should do and how we might tell whether it works.</p>
+
+          <h3>A category worth naming</h3>
+          <p>Most of the current conversation about artificial intelligence and reading is really
+          about productivity. A summariser compresses a document so the reader can avoid reading all
+          of it. A writing assistant drafts, rewrites and edits. A &ldquo;copilot&rdquo; answers
+          questions about a text and pulls out the key points. In each case the tool is doing well
+          when it lets the user produce something &mdash; a summary, a draft, an answer &mdash; more
+          quickly, and the unspoken ideal is often that the reader need not engage with the underlying
+          text at all.</p>
+          <p>A tool of the kind I am describing does the opposite. Its job is to help a reader
+          understand a particular passage that they have chosen to read and intend to keep reading. It
+          does not summarise the text away or read it on the reader's behalf. It steps in at the
+          moment of difficulty, supplies something that makes the hard passage clearer, and then hands
+          the reader back to the text. What is being optimised is the reader's understanding of the
+          material, not the speed of producing something else from it. It seems useful to give this
+          kind of tool its own name, and I will call it a <em>comprehension tool</em>.</p>
+          <p>The distinction is more than a label, because the two kinds of tool pull in opposite
+          directions. A productivity tool is rewarded for letting the reader skip the text; a
+          comprehension tool is rewarded for keeping the reader in it. A productivity tool usually
+          works on a whole document in order to transform it; a comprehension tool works on a small,
+          reader-chosen span in order to illuminate it, and then gets out of the way. The output of a
+          productivity tool is the deliverable the user keeps; the output of a comprehension tool is
+          scaffolding, useful only until understanding arrives and then discarded. None of this is a
+          criticism of productivity tools, which are genuinely useful. The point is only that
+          comprehension is a different goal, and that it has had far less explicit attention.</p>
+
+          <h3>What defines a comprehension tool</h3>
+          <p>I would suggest four properties. Each one does real work: take any single one away and
+          the tool turns back into something we already have.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">02</span>
+          <p class="section-label">Four properties</p>
+        </div>
+        <div>
+          <div class="props">
+            <div>
+              <p class="grid-name">Reader-initiated</p>
+              <p>The reader asks for help, at a point of their own choosing, rather than the system
+              deciding for them where help is needed. Take this away and you have an automatic
+              enrichment layer that competes with the text for attention.</p>
+            </div>
+            <div>
+              <p class="grid-name">At read time</p>
+              <p>The help arrives during reading, at the moment of difficulty, not as a separate
+              preparatory step beforehand or a study exercise afterwards. Take this away and you have
+              a document-preparation or study-guide tool.</p>
+            </div>
+            <div>
+              <p class="grid-name">Inline</p>
+              <p>The help appears within the reading surface, next to the passage that prompted it,
+              rather than in a separate window or chat thread. Take this away and you have a
+              reading-adjacent chatbot.</p>
+            </div>
+            <div>
+              <p class="grid-name">Position-preserving</p>
+              <p>The reader does not lose their place, scroll away, or navigate elsewhere. Take this
+              away and you have reintroduced exactly the navigational cost the tool was meant to
+              remove.</p>
+            </div>
+          </div>
+          <div class="paper">
+            <p>Put together, these four describe a tool that meets a need the reader actually feels,
+            at the moment they feel it, where they feel it, without making them pay the costs that the
+            everyday workaround imposes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="split">
+        <div>
+          <span class="section-num">03</span>
+          <p class="section-label">Prior work</p>
+        </div>
+        <div class="paper">
+          <h3>What already exists</h3>
+          <p>It is important to be clear that the basic interaction here is not new, and I do not want
+          to suggest otherwise. Several research systems have already shown that text can be augmented
+          on demand, within the reading surface, in response to what a reader selects. Work on
+          intelligent reading support for scientific papers surfaces salient content inline, with the
+          reader able to control where (Fok et al., 2023). A browser tool generates annotations on a
+          manuscript directly where the reader is working (D&iacute;az et al., 2024). And a recent
+          interaction-design thesis prototyped almost exactly the interaction I have described: on
+          highlighting a passage and choosing a prompt, an AI response is inserted beneath the
+          selection, the surrounding text reflowing to make room, with a control to collapse it again
+          and restore the original (Melin-Higgins, 2024).</p>
+          <p>What each of these delivers, though, is words. Scim highlights text that is already on
+          the page; the browser tool attaches written annotations; the thesis prototype inserts a
+          written response. This is the difference I want to draw out, because I think it matters more
+          than it first appears. A reader who has not understood a passage of prose is, in each case,
+          handed more prose &mdash; an explanation, an annotation, an answer &mdash; in the same
+          verbal mode that defeated them to begin with. The behaviour that prompted this article is
+          different in kind: the reader goes looking for a visual. The evidence that visuals aid
+          understanding (Mayer and Gallini, 1990; Carney and Levin, 2002; Guo et al., 2020) is
+          evidence about a change of mode, from words to image, and not about supplying more
+          words.</p>
+          <p>Two very recent studies bear on the idea and are worth noting honestly. A controlled
+          investigation of AI help anchored to text found that readers preferred help integrated with
+          the document over a separate chat window, and preferred selecting the text themselves over
+          having it chosen for them (Joshi and Vogel, 2026) &mdash; encouraging for two of the four
+          properties. The same study found no measurable effect on comprehension; but its help, too,
+          was textual, and its passages short and undemanding, so it leaves the visual question
+          untouched. Separately, an augmented reading interface that links readers to figures and
+          tables already present in a document improved reading-quiz scores without adding time or
+          cognitive load (Hwang et al., 2026) &mdash; though it surfaces visuals the document already
+          contains rather than generating one where the prose has none.</p>
+
+          <h3>The gap this paper identifies</h3>
+          <p>I am not aware of any existing system that generates an image, inline, in response to a
+          reader's selection, as an aid to understanding the passage that prompted it. The components
+          are not new &mdash; images can be generated, content can be placed inline, a selection can
+          trigger it &mdash; and I make no claim to having originated any of them. What I have not
+          found is a system that brings them together.</p>
+
+          <h3>What we still need to find out</h3>
+          <p>Naming a category is only useful if it can be tested, and the central question is a plain
+          one: does a comprehension tool of this kind actually improve comprehension of dense
+          material? This is not the same question as whether it is fast, or well-liked, or frequently
+          used; a tool can be all three and still make no difference to understanding, or even
+          substitute a plausible-looking picture for genuine understanding.</p>
+          <p>The way to find out is not elaborate. It is to compare how well readers understand a
+          genuinely difficult passage under three conditions: reading it unaided, reading it while
+          free to leave the page and search the web for a supporting image, and reading it with an
+          inline comprehension tool. Comprehension itself &mdash; measured with questions that test
+          understanding and transfer, not mere recall &mdash; is the outcome that matters, and the
+          passage has to be hard enough that there is room to improve. The comparison with the
+          everyday workaround is the important one, because that workaround already delivers some
+          benefit; the tool has to do better than the reader leaving the page, not merely better than
+          nothing.</p>
+          <p>It is worth saying plainly that the answer might be negative. The study noted above
+          (Joshi and Vogel, 2026) found no comprehension effect from a related, if weaker,
+          intervention. A clear negative result would itself be useful, because it would tell us where
+          the effort is, and is not, worth spending. The value lies in having an answer, not a
+          particular answer.</p>
+
+          <h3>Why this matters for those who support readers</h3>
+          <p>For those of us whose work involves helping people read and understand &mdash;
+          librarians, those who teach information literacy, anyone who supports learners through
+          difficult material &mdash; this is not an abstract question. We already see readers
+          struggling with dense text and improvising their own visual aids, and we already know from
+          the wider literature that good visuals help. A tool that meets that need at the point of
+          difficulty, without pulling the reader off the page, would sit naturally alongside the
+          support we try to provide. Equally, if such tools turn out not to help, that is something we
+          ought to know before recommending them.</p>
+          <p>I offer the idea of a comprehension tool, then, not as a finished theory and not as a
+          claim to have invented the underlying interaction &mdash; the selection of text triggering
+          an inline response &mdash; which several systems have already demonstrated. What those
+          systems deliver is words: highlights, annotations, written answers. I offer this framework
+          as a way of organising a space that is currently described mostly in the language of
+          productivity, and of naming precisely what has not yet been attempted: putting a generated
+          image, rather than more prose, in front of the reader at the moment of difficulty &mdash;
+          precisely enough that we can design for it deliberately, and test whether it works.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">04</span>
+          <p class="section-label">References</p>
+        </div>
+        <div class="refs">
+          <p>Carney, R.N. and Levin, J.R. (2002) &lsquo;Pictorial illustrations still improve
+          students&rsquo; learning from text&rsquo;, <em>Educational Psychology Review</em>, 14(1),
+          pp. 5&ndash;26.</p>
+          <p>D&iacute;az, O., Garmendia, X. and Pereira, J. (2024) <em>Streamlining the review
+          process: AI-generated annotations in research manuscripts.</em> arXiv:2412.00281.</p>
+          <p>Fok, R., Kambhamettu, H., Soldaini, L., Bragg, J., Lo, K., Hearst, M.A., Head, A. and
+          Weld, D.S. (2023) &lsquo;Scim: intelligent skimming support for scientific papers&rsquo;, in
+          <em>Proceedings of the 28th International Conference on Intelligent User Interfaces
+          (IUI &rsquo;23).</em> ACM, pp. 476&ndash;490.</p>
+          <p>Guo, D., Zhang, S., Wright, K.L. and McTigue, E.M. (2020) &lsquo;Do you get the picture?
+          A meta-analysis of the effect of graphics on reading comprehension&rsquo;,
+          <em>AERA Open</em>, 6(1).</p>
+          <p>Hwang, A., Kambhamettu, H., Yang, Y., Patel, A., Chang, J.C. and Head, A. (2026)
+          <em>Connecting the dots: surfacing structure in documents through AI-generated cross-modal
+          links.</em> arXiv:2602.16895.</p>
+          <p>Joshi, N. and Vogel, D. (2026) &lsquo;Designing and evaluating AI margin notes in
+          document reader software&rsquo;, in <em>Proceedings of the 2026 CHI Conference on Human
+          Factors in Computing Systems (CHI &rsquo;26).</em> ACM.</p>
+          <p>Mayer, R.E. (2009) <em>Multimedia learning.</em> 2nd edn. Cambridge: Cambridge University
+          Press.</p>
+          <p>Mayer, R.E. and Gallini, J.K. (1990) &lsquo;When is an illustration worth ten thousand
+          words?&rsquo;, <em>Journal of Educational Psychology</em>, 82(4), pp. 715&ndash;726.</p>
+          <p>Melin-Higgins, L. (2024) <em>AI in document interaction: an interaction design approach
+          to enhancing reading practices.</em> Bachelor thesis. Malm&ouml; University.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="built.html">What's Built</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="papers.html">Papers</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+      <div class="footer-meta">
+        <div>© 2026 Colm O'Connor · All rights reserved · <a href="mailto:colm@aiaugmentedreading.com" style="color:inherit">colm@aiaugmentedreading.com</a></div>
+        <div class="footer-ip">Irish Short-Term Patent PTIE20260000000265 (filed April 2026) · European patent application filed August 2026</div>
+        <div>Page last updated <time datetime="2026-08-06">2026-08-06</time></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
