@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="An inline visual comprehension layer for digital reading. Highlight a descriptive passage and a diagram, map or animation appears in place."/>
+  <title>AI Augmented Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=DM+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+  <link rel="canonical" href="https://aiaugmentedreading.com/index.html"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <!-- Analytics: privacy-first, cookieless, EU-hosted. No consent banner required.
+       Uncomment and set the domain when the site goes live.
+  <script defer data-domain="aiaugmentedreading.com" src="https://plausible.io/js/script.js"></script>
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav>
+    <a class="brand" href="index.html">AI Augmented Reading</a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="built.html">What's Built</a></li>
+      <li><a href="integration.html">Integration</a></li>
+      <li><a href="evidence.html">Evidence</a></li>
+      <li><a href="papers.html">Papers</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-demo" href="demo.html">View Demo →</a>
+  </nav>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-split">
+        <div>
+      <p class="eyebrow">Working prototype · chemistry proven as a proof of concept</p>
+      <h1>Text that shows you what it's describing.</h1>
+      <p class="lead">An embeddable comprehension layer for digital reading. A reader highlights a
+      descriptive passage &mdash; a storm system, a cardiac cycle, a reaction mechanism &mdash; and a
+      visual appears inline. The reader stays in the text.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="demo.html">Open the demo</a>
+        <a class="btn btn--secondary" href="partnership.html">For publishers</a>
+      </div>
+        </div>
+        <figure style="margin:0">
+          <img class="hero-figure" src="assets/hero-example.svg" alt="A passage about blood returning to the right atrium with two sentences highlighted, and a labelled cardiac schematic rendered inline beneath it."/>
+          <figcaption class="hero-figure-cap">The reader highlights. The visual appears in place.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">01</span>
+          <p class="section-label">The problem</p>
+        </div>
+        <div>
+          <h2>Readers already leave the page. It costs them every time.</h2>
+          <div class="prose">
+            <p>Every reading interface in common use works at the level of the word.
+            Dictionary lookup, highlighting, annotation, text-to-speech. None of them helps the
+            reader who meets a passage describing something inherently visual &mdash; a depression
+            deepening as it tracks north-east, the mechanism by which a beta-blocker interrupts a
+            cardiac signalling cascade, the disposition of three corps across a ridge.</p>
+            <p>That reader has two options. Leave the document and search &mdash; losing their place,
+            their momentum, and usually returning with something generic rather than something fitted
+            to the sentence that caused the difficulty. Or read on without the understanding the
+            passage deserved.</p>
+            <p>The information needed to produce the right visual is already in the text.
+            What has been missing is a way to act on it in place.</p>
+          </div>
+          <blockquote>It is not AI summarising books or replacing the author's voice. It is AI doing
+          what a good diagram always did &mdash; making the world the author described visible to the
+          reader.<cite>Colm O'Connor</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"><hr/></div>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">02</span>
+          <p class="section-label">Scope</p>
+        </div>
+        <div>
+          <h2>Every kind of passage a reader cannot picture.</h2>
+          <p>These are the kinds of descriptive content the method is built to address. Chemistry is
+          the domain proven so far, as a proof of concept; the rest indicate where it is designed to
+          extend.</p>
+        </div>
+      </div>
+
+      <div class="examples">
+        <figure>
+          <img src="assets/ex-chemical.svg" alt="Reaction scheme: salicylic acid and acetic anhydride giving aspirin, with the transferred acetyl group highlighted."/>
+          <figcaption>
+            <p class="ex-kind">Chemical</p>
+            <p class="ex-text">A named compound in prose becomes a structure. This is the domain implemented deterministically.</p>
+            <span class="grid-flag">Proof of concept</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-anatomical.svg" alt="Heart cross-section showing four chambers, four valves and the pulmonary and systemic circuits, with a synchronised ECG trace."/>
+          <figcaption>
+            <p class="ex-kind">Anatomical</p>
+            <p class="ex-text">A paragraph traces blood through four chambers and two circuits. The schematic holds them all at once.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-physical.svg" alt="Two-source interference: circular wavefronts overlapping, with nodal lines marked and the intensity profile plotted."/>
+          <figcaption>
+            <p class="ex-kind">Physical</p>
+            <p class="ex-text">Interference is hard to picture from description alone, and immediate once drawn.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-astronomical.svg" alt="Four planetary orbits with each planet drawn at successive ninety-day intervals across one Earth year, so the difference in orbital period is visible."/>
+          <figcaption>
+            <p class="ex-kind">Astronomical</p>
+            <p class="ex-text">Mercury laps the sun four times while Mars manages half a circuit. Animated in the reader; shown here as a still.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-meteorological.svg" alt="Synoptic chart of a deepening low, with isobars, pressure values and warm and cold fronts."/>
+          <figcaption>
+            <p class="ex-kind">Meteorological</p>
+            <p class="ex-text">Synoptic terms are technical shorthand. The chart shows what the shorthand stands for.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-geographical.svg" alt="Voyage route across a coastline with four named waypoints, a compass and a distance scale."/>
+          <figcaption>
+            <p class="ex-kind">Geographical</p>
+            <p class="ex-text">Most readers cannot place the Sunda Strait. Plotted in sequence, the journey resolves.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-tactical.jpg" alt="Tactical map of the field at Waterloo, 18 June 1815, showing Allied positions along the ridge of Mont-Saint-Jean and the French advance from the south-east."/>
+          <figcaption>
+            <p class="ex-kind">Tactical</p>
+            <p class="ex-text">Three sentences name eight places and four formations. The map resolves all of them at once.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-architectural.jpg" alt="Reconstruction of the Forum Romanum around 100 AD, showing the Rostra, Curia, temples and surrounding streets."/>
+          <figcaption>
+            <p class="ex-kind">Architectural</p>
+            <p class="ex-text">History writing names buildings a reader has never seen. A reconstruction grounds them in relation to each other.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-musical.svg" alt="An audio waveform with its amplitude envelope, marked for attack, decay, sustain and release."/>
+          <figcaption>
+            <p class="ex-kind">Musical</p>
+            <p class="ex-text">Sound described in words becomes a shape with a beginning, a middle and an end.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-culinary.svg" alt="Preparation flow showing ingredients feeding into toasting, grinding and simmering stages with timings."/>
+          <figcaption>
+            <p class="ex-kind">Culinary</p>
+            <p class="ex-text">A recipe embedded in lyrical prose, extracted as a sequence you could actually follow.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ex-landscape.jpg" alt="Illustration of an upland heath at dawn, with fern and heather in the foreground and a village in the valley below."/>
+          <figcaption>
+            <p class="ex-kind">Landscape</p>
+            <p class="ex-text">Descriptive prose builds a scene slowly. The visual arrives with the sentence rather than after it.</p>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="examples-note"><strong>Illustrative.</strong> These show the kinds of visual a reader
+      receives. Output is not limited to still images &mdash; several of these are animated in the
+      reading interface, where the orbits turn, the cardiac cycle beats and the storm tracks
+      north-east, and appear here as stills. They are not produced at runtime, and only chemistry is
+      implemented with deterministic rendering, as a proof of concept.
+      <a href="built.html">Full status</a></p>
+
+    </section>
+
+    <section class="section section--alt">
+      <div class="split">
+        <div>
+          <span class="section-num">03</span>
+          <p class="section-label">Status</p>
+        </div>
+        <div>
+          <h2>What's built, stated plainly.</h2>
+          <p>There is a working prototype and a codebase. Chemistry renders deterministically, as a proof of
+          concept rather than a production system. The other domains shown in the demo are illustrative
+          of the method rather than implemented, and the demo's visuals are pre-generated and embedded
+          rather than produced at runtime.</p>
+          <p>That distinction matters, so it sits on the front page rather than in a footnote.
+          <a href="built.html">Full status</a></p>
+          <div class="stats">
+            <div class="stat">
+              <p class="stat-num">1</p>
+              <p class="stat-label">Domain proven deterministically &mdash; chemistry, as a proof of concept</p>
+            </div>
+            <div class="stat">
+              <p class="stat-num">13</p>
+              <p class="stat-label">Passages in the demo, each with the visual a reader would receive</p>
+            </div>
+            <div class="stat">
+              <p class="stat-num">0</p>
+              <p class="stat-label">Changes required to existing catalogue files</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="split">
+        <div>
+          <span class="section-num">04</span>
+          <p class="section-label">Evidence</p>
+        </div>
+        <div>
+          <h2>What's established, and what isn't.</h2>
+          <p>That well-chosen visuals alongside text improve comprehension is well supported in the
+          literature. Whether an <em>inline generated</em> visual delivers that same gain is untested
+          &mdash; by anyone, including me.</p>
+          <p>A controlled study is the next step, and a negative result would be as useful as a
+          positive one. <a href="evidence.html">The evidence, in full</a></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="band-inner">
+        <p class="band-label">See it work</p>
+        <h2>The demo is the argument.</h2>
+        <p>Thirteen passages, each with the visual a reader would receive on highlighting it.
+        It takes about two minutes.</p>
+        <div class="cta-row" style="margin-top:2rem">
+          <a class="btn btn--primary" href="demo.html">Open the demo</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">05</span>
+          <p class="section-label">Partnership</p>
+        </div>
+        <div>
+          <h2>For publishers and platforms.</h2>
+          <p>The work is available as a package &mdash; the demo, the codebase, a proof of concept,
+          and the design judgment behind it. Deal shape is open: outright sale, exclusive or
+          non-exclusive licence, field-of-use split, or a pilot.</p>
+          <div class="cta-row" style="margin-top:1.75rem">
+            <a class="btn btn--secondary" href="partnership.html">What's on offer</a>
+            <a class="btn btn--secondary" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="built.html">What's Built</a></li>
+        <li><a href="integration.html">Integration</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="papers.html">Papers</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+      <div class="footer-meta">
+        <div>© 2026 Colm O'Connor · All rights reserved · <a href="mailto:colm@aiaugmentedreading.com" style="color:inherit">colm@aiaugmentedreading.com</a></div>
+        <div class="footer-ip">Irish Short-Term Patent PTIE20260000000265 (filed April 2026) · European patent application filed August 2026</div>
+        <div>Page last updated <time datetime="2026-08-05">2026-08-05</time></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
