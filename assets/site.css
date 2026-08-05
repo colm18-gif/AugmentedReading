@@ -107,6 +107,17 @@ blockquote cite{display:block;font-family:var(--sans);font-size:.78rem;font-styl
   color:var(--accent-deep);background:var(--accent-soft);border:1px solid var(--accent-line);
   border-radius:100px;padding:.13rem .6rem;margin-top:.65rem}
 
+/* --- Example strip -------------------------------------------------------- */
+.examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem;margin:2rem 0 0}
+.examples figure{margin:0;background:var(--paper);border:1px solid var(--rule);
+  border-radius:var(--r);overflow:hidden}
+.examples img{width:100%;height:auto;display:block;border-bottom:1px solid var(--rule)}
+.examples figcaption{padding:.85rem 1rem 1rem}
+.examples .ex-kind{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.3rem}
+.examples .ex-text{font-size:.83rem;line-height:1.5;color:var(--ink-3);margin:0;max-width:none}
+.examples-note{font-size:.83rem;line-height:1.6;color:var(--ink-3);margin-top:1rem;max-width:var(--measure)}
+
 /* --- Tables -------------------------------------------------------------- */
 table{width:100%;border-collapse:separate;border-spacing:0;margin:1.75rem 0;font-size:.94rem;
   border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
