@@ -9,5 +9,4 @@ descriptive passage and a diagram, map or animation appears inline.
 - Contact: colm@aiaugmentedreading.com
 
 © 2026 Colm O'Connor. All rights reserved.
-Irish Short-Term Patent PTIE20260000000265 (filed April 2026) ·
-European patent application filed August 2026
+Irish Short-Term Patent PTIE20260000000265 (filed April 2026)
