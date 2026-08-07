@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="An inline visual comprehension layer for digital reading. Highlight a descriptive passage and a diagram, map or animation appears in place."/>
+  <title>AI Augmented Reading · Scientific publisher direction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=DM+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site-scientific.css"/>
+  <!-- Analytics: privacy-first, cookieless, EU-hosted. No consent banner required.
+       Uncomment and set the domain when the site goes live.
+  <script defer data-domain="aiaugmentedreading.com" src="https://plausible.io/js/script.js"></script>
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav>
+    <a class="brand" href="index.html">AI Augmented Reading</a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="built.html">What's Built</a></li>
+      <li><a href="integration.html">Integration</a></li>
+      <li><a href="papers.html">Papers</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-demo" href="demo.html">View Demo →</a>
+  </nav>
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">Working prototype · chemistry proven as a proof of concept</p>
+      <h1>Text that shows you what it's describing.</h1>
+      <p class="lead">An embeddable comprehension layer for digital reading. A reader highlights a
+      descriptive passage &mdash; a storm system, a cardiac cycle, a reaction mechanism &mdash; and a
+      visual appears inline. The reader stays in the text.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="demo.html">Open the demo</a>
+        <a class="btn btn--secondary" href="partnership.html">For publishers</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">01</span>
+          <p class="section-label">The problem</p>
+        </div>
+        <div>
+          <h2>Readers already leave the page. It costs them every time.</h2>
+          <div class="prose">
+            <p>Every reading interface in common use works at the level of the word.
+            Dictionary lookup, highlighting, annotation, text-to-speech. None of them helps the
+            reader who meets a passage describing something inherently visual &mdash; a depression
+            deepening as it tracks north-east, the mechanism by which a beta-blocker interrupts a
+            cardiac signalling cascade, the disposition of three corps across a ridge.</p>
+            <p>That reader has two options. Leave the document and search &mdash; losing their place,
+            their momentum, and usually returning with something generic rather than something fitted
+            to the sentence that caused the difficulty. Or read on without the understanding the
+            passage deserved.</p>
+            <p>The information needed to produce the right visual is already in the text.
+            What has been missing is a way to act on it in place.</p>
+          </div>
+          <blockquote>It is not AI summarising books or replacing the author's voice. It is AI doing
+          what a good diagram always did &mdash; making the world the author described visible to the
+          reader.<cite>Colm O'Connor</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"><hr/></div>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">02</span>
+          <p class="section-label">Scope</p>
+        </div>
+        <div>
+          <h2>Every kind of passage a reader cannot picture.</h2>
+          <p>These are the kinds of descriptive content the method is built to address. Chemistry is
+          the domain proven so far, as a proof of concept; the rest indicate where it is designed to
+          extend.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div>
+          <p class="grid-name">Anatomical</p>
+          <p class="grid-desc">Cardiac cycles, pharmacological cascades, cellular mechanisms</p>
+        </div>
+        <div>
+          <p class="grid-name">Chemical</p>
+          <p class="grid-desc">Molecular structures, reactions, equilibrium</p>
+          <span class="grid-flag">● Proof of concept</span>
+        </div>
+        <div>
+          <p class="grid-name">Astronomical</p>
+          <p class="grid-desc">Orreries, planetary systems, orbital diagrams</p>
+        </div>
+        <div>
+          <p class="grid-name">Tactical</p>
+          <p class="grid-desc">Battle formations, dispositions, terrain</p>
+        </div>
+        <div>
+          <p class="grid-name">Meteorological</p>
+          <p class="grid-desc">Storm systems, pressure fronts, weather patterns</p>
+        </div>
+        <div>
+          <p class="grid-name">Geographical</p>
+          <p class="grid-desc">Voyage routes, expedition tracks, cartographic journeys</p>
+        </div>
+        <div>
+          <p class="grid-name">Architectural</p>
+          <p class="grid-desc">Floor plans, site diagrams, spatial reconstructions</p>
+        </div>
+        <div>
+          <p class="grid-name">Musical</p>
+          <p class="grid-desc">Waveforms, instrument layers, acoustic dynamics</p>
+        </div>
+        <div>
+          <p class="grid-name">Culinary</p>
+          <p class="grid-desc">Recipe flows, ingredient diagrams, preparation stages</p>
+        </div>
+        <div>
+          <p class="grid-name">Relational</p>
+          <p class="grid-desc">Character maps, timelines, narrative structures</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="split">
+        <div>
+          <span class="section-num">03</span>
+          <p class="section-label">Status</p>
+        </div>
+        <div>
+          <h2>What's built, stated plainly.</h2>
+          <p>There is a working prototype and a codebase. Chemistry renders deterministically, as a proof of
+          concept rather than a production system. The other domains shown in the demo are illustrative
+          of the method rather than implemented, and the demo's visuals are pre-generated and embedded
+          rather than produced at runtime.</p>
+          <p>That distinction matters, so it sits on the front page rather than in a footnote.
+          <a href="built.html">Full status</a></p>
+          <div class="stats">
+            <div class="stat">
+              <p class="stat-num">1</p>
+              <p class="stat-label">Domain proven deterministically &mdash; chemistry, as a proof of concept</p>
+            </div>
+            <div class="stat">
+              <p class="stat-num">13</p>
+              <p class="stat-label">Passages in the demo, each with the visual a reader would receive</p>
+            </div>
+            <div class="stat">
+              <p class="stat-num">0</p>
+              <p class="stat-label">Changes required to existing catalogue files</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">04</span>
+          <p class="section-label">Evidence</p>
+        </div>
+        <div>
+          <h2>What's established, and what isn't.</h2>
+          <p>That well-chosen visuals alongside text improve comprehension is well supported in the
+          literature. Whether an <em>inline generated</em> visual delivers that same gain is untested
+          &mdash; by anyone, including me.</p>
+          <p>A controlled study is the next step, and a negative result would be as useful as a
+          positive one.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="band-inner">
+        <p class="band-label">See it work</p>
+        <h2>The demo is the argument.</h2>
+        <p>Thirteen passages, each with the visual a reader would receive on highlighting it.
+        It takes about two minutes.</p>
+        <div class="cta-row" style="margin-top:2rem">
+          <a class="btn btn--primary" href="demo.html">Open the demo</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="section-num">05</span>
+          <p class="section-label">Partnership</p>
+        </div>
+        <div>
+          <h2>For publishers and platforms.</h2>
+          <p>The work is available as a package &mdash; the demo, the codebase, a proof of concept,
+          and the design judgment behind it. Deal shape is open: outright sale, exclusive or
+          non-exclusive licence, field-of-use split, or a pilot.</p>
+          <div class="cta-row" style="margin-top:1.75rem">
+            <a class="btn btn--secondary" href="partnership.html">What's on offer</a>
+            <a class="btn btn--secondary" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="built.html">What's Built</a></li>
+        <li><a href="integration.html">Integration</a></li>
+        <li><a href="papers.html">Papers</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="demo.html">Demo</a></li>
+      </ul>
+      <div class="footer-meta">
+        <div>© 2026 Colm O'Connor · All rights reserved · <a href="mailto:colm@aiaugmentedreading.com" style="color:inherit">colm@aiaugmentedreading.com</a></div>
+        <div class="footer-ip">Irish Short-Term Patent PTIE20260000000265 (filed April 2026)</div>
+        <div>Page last updated <time datetime="2026-08-05">2026-08-05</time></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
