@@ -57,19 +57,6 @@ nav a.brand{font-size:.95rem;font-weight:700;letter-spacing:-.022em;color:var(--
 .hero{max-width:var(--wide);margin:0 auto;padding:5.5rem var(--pad) 4rem;
   border-bottom:1px solid var(--rule)}
 
-/* --- Hero with figure ------------------------------------------------------ */
-.hero-split{display:grid;grid-template-columns:1fr 460px;gap:3.5rem;align-items:center}
-.hero-figure{width:100%;height:auto;display:block}
-.hero-figure-cap{font-size:.78rem;line-height:1.5;color:var(--ink-3);margin-top:.7rem;max-width:none}
-@media(max-width:980px){
-  .hero-split{grid-template-columns:1fr;gap:2.25rem}
-  .hero-figure{max-width:520px}
-}
-
-/* --- Alternating section tone --------------------------------------------- */
-.section--tint{background:var(--paper-2);max-width:none;border-block:1px solid var(--rule)}
-.section--tint > *{max-width:var(--wide);margin-left:auto;margin-right:auto}
-
 /* --- Type ---------------------------------------------------------------- */
 h1{font-size:clamp(2.4rem,5.4vw,3.9rem);font-weight:600;line-height:1.1;
   letter-spacing:-.027em;max-width:17ch;margin-bottom:1.4rem}
@@ -119,28 +106,6 @@ blockquote cite{display:block;font-family:var(--sans);font-size:.78rem;font-styl
 .grid-flag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.02em;
   color:var(--accent-deep);background:var(--accent-soft);border:1px solid var(--accent-line);
   border-radius:100px;padding:.13rem .6rem;margin-top:.65rem}
-
-/* --- Example strip -------------------------------------------------------- */
-.examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem;margin:2rem 0 0}
-.examples figure{margin:0;background:var(--paper);border:1px solid var(--rule);
-  border-radius:var(--r);overflow:hidden}
-.examples img{width:100%;height:auto;display:block;border-bottom:1px solid var(--rule)}
-.examples figcaption{padding:.85rem 1rem 1rem}
-.examples .ex-kind{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:.3rem}
-.examples .ex-text{font-size:.83rem;line-height:1.5;color:var(--ink-3);margin:0;max-width:none}
-.examples-note{font-size:.83rem;line-height:1.6;color:var(--ink-3);margin-top:1rem;max-width:var(--measure)}
-
-/* --- About: portrait beside the name --------------------------------------- */
-.bio{display:grid;grid-template-columns:140px 1fr;gap:1.75rem;align-items:start}
-.bio-portrait{width:140px;height:140px;border-radius:var(--r);object-fit:cover;
-  display:block;border:1px solid var(--rule);background:var(--paper-2)}
-.bio h1{margin-bottom:1rem}
-.bio .lead{margin-bottom:0}
-@media(max-width:600px){
-  .bio{grid-template-columns:96px 1fr;gap:1.1rem}
-  .bio-portrait{width:96px;height:96px}
-}
 
 /* --- Tables -------------------------------------------------------------- */
 table{width:100%;border-collapse:separate;border-spacing:0;margin:1.75rem 0;font-size:.94rem;
