@@ -6,7 +6,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --paper:#FAF8F3; --paper-2:#F2EFE7; --paper-3:#E8E4DA;
+  --paper:#F5F7FA; --paper-2:#EBEFF4; --paper-3:#DFE5EC;
   --ink:#16191D; --ink-2:#3D444E; --ink-3:#5A626E; --ink-4:#8A929E;
   --accent:#0B5CD5; --accent-deep:#084099; --accent-soft:#E8F0FC; --accent-line:#C3D4F2;
   --rule:#E3E6EA; --rule-strong:#16191D;
