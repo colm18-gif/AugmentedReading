@@ -1,4 +1,4 @@
-:root{--paper:#f7f8f2;--ink:#183c34;--ink-soft:#465c54;--navy:#143e36;--accent:#28614e;--rule:#d6dfd1;--accent-line:#bdcfb7;--sans:Arial,Helvetica,sans-serif}
+#site-nav.site-nav{--paper:#f7f8f2;--ink:#183c34;--ink-soft:#465c54;--navy:#143e36;--accent:#28614e;--rule:#d6dfd1;--accent-line:#bdcfb7;--sans:Arial,Helvetica,sans-serif}
 .site-nav,#site-nav.site-nav{height:84px;position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 max(24px,calc((100vw - 1200px)/2));background:var(--paper);border-bottom:1px solid var(--rule);font-family:var(--sans)}
 .site-nav a.brand,#site-nav.site-nav a.brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:15px;line-height:1.25;font-weight:700;letter-spacing:-.03em;color:var(--ink);text-decoration:none;border:0;white-space:nowrap}
 .brand-symbol{width:34px;height:36px;display:grid;place-items:center;color:var(--navy);font:28px Georgia,serif;border:1px solid var(--accent-line);border-radius:3px 12px 3px 3px;background:#e6efdf}
